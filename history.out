@@ -1,0 +1,11 @@
+    1  sudo apt install ssh-server 
+    2  sudo apt update
+    3  sudo dnf install openssh-server -y
+    4  sudo system ctl star sshd
+    5  sudo systemctl star sshd
+    6  sudo systemctl start sshd
+    7  sudo systemctl enable sshd
+    8  sudo firewall-cmd --add-service=ssh --permanent
+    9  ip ad
+   10  ip a
+   11  history > ~/history.out

@@ -1,0 +1,22 @@
+# file: home/user1
+# owner: user1
+# group: user1
+user::rwx
+group::---
+other::---
+
+# file: home/nikolaevem/suid_lab/cat
+# owner: root
+# group: root
+# flags: s--
+user::rwx
+group::r-x
+other::r-x
+
+# file: home/nikolaevem/cap_lab/chown
+# owner: nikolaevem
+# group: nikolaevem
+user::rwx
+group::r-x
+other::r-x
+
