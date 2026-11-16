@@ -8,4 +8,52 @@
     8  sudo firewall-cmd --add-service=ssh --permanent
     9  ip ad
    10  ip a
-   11  history > ~/history.out
+   11  history
+   12  sudo grep -E 'useradd|groupadd|chage|chmod|setcap|visudo|chown' /root/.bash_history
+   13  history -a
+   14  ls -a
+   15  useradd -u 1234 user1
+   16  sudo useradd -u 1234 user1
+   17  sudo usermod user1 -G students
+   18  sudo groupadd students
+   19  sudo usermod -aG students user1
+   20  sudo chage -M 90 user1
+   21  cat /etc/passwd
+   22  sudo find / -type f -perm -4000 2>/dev/null
+   23  ps -eo pid,ppid,ruid,euid,user,euser,comm
+   24  cat /etc/shadow
+   25  mkdir -p ~/suid_lab
+   26  cp /usr/bin/cat ~/suid_lab/cat
+   27  cd ~/suid_lab
+   28  ls -l cat
+   29  sudo chown root:root ~/suid_lab/cat
+   30  sudo chmod u+s ~/suid_lab/cat
+   31  ls -l ~/suid_lab/cat
+   32  ./cat /etc/shadow
+   33  mkdir -p ~/cap_lab
+   34  cp /usr/bin/chown ~/cap_lab/chown
+   35  cd ~/cap_lab
+   36  ls -l chown
+   37  sudo setcap cap_chown=ep ~/cap_lab/chown
+   38  getcap ~/cap_lab/chown
+   39  ./chown nikolaevem /tmp/cap_test_file
+   40  sudo touch /tmp/cap_test_file
+   41  sudo chown root:root /tmp/cap_test_file
+   42  ls -l /tmp/cap_test_file
+   43  ./chown nikolaevem /tmp/cap_test_file
+   44  chown nikolaevem /tmp/cap_test_file
+   45  user1 ALL=(root) /usr/bin/date
+   46  sudo visudo
+   47  sudo visudo -f /etc/sudoers.d/user1-time
+   48  cat /etc/sudoers.d/user1-time
+   49  sudo cat /etc/sudoers.d/user1-time
+   50  sudo visudo -c
+   51  sudo sudo visudo -c
+   52  su - user1
+   53  sudo passwd -S user1
+   54  sudo passwd user1
+   55  sudo passwd -S user1
+   56  su - user1
+   57  sudo -l
+   58  history
+   59  history > ~/history.out
